@@ -15,7 +15,7 @@ class Snake():
         """Creates a three segments long snake."""
         new_segment = Turtle()
         new_segment.shape("circle")
-        new_segment.color("brown1")
+        new_segment.color("orangered")
         new_segment.penup()
         self.snake_segments.append(new_segment)
 

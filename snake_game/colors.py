@@ -1,4 +1,4 @@
-colors_css = [
+COLORS_FOOD = [
     "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure",
 "beige", "bisque", "black", "blanchedalmond", "blue",
 "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse",
@@ -6,7 +6,7 @@ colors_css = [
 "cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray",
 "darkgrey", "darkgreen", "darkkhaki", "darkmagenta", "darkolivegreen",
 "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen",
-"darkslateblue", "darkslategray", "darkslategrey","darkturquoise",
+"darkslateblue", "darkslategray", "darkturquoise",
 "darkviolet", "deeppink", "deepskyblue","dimgray", "dimgrey",
 "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia",
 "gainsboro", "ghostwhite", "gold", "goldenrod", "gray", "grey",
