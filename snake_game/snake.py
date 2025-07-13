@@ -13,12 +13,14 @@ class Snake():
 
     def create_snake(self):
         """Creates a three segments long snake."""
-        for _ in range(3):
-            new_segment = Turtle()
-            new_segment.shape("square")
-            new_segment.color("white")
-            new_segment.penup()
-            self.snake_segments.append(new_segment)
+        new_segment = Turtle()
+        new_segment.shape("circle")
+        new_segment.color("brown1")
+        new_segment.penup()
+        self.snake_segments.append(new_segment)
+
+        for _ in range(2):
+            self.grow()
 
         for index, segment in enumerate(self.snake_segments):
             if index < len(self.snake_segments) - 1:
@@ -26,6 +28,14 @@ class Snake():
                 y_cor = segment.ycor()
 
                 self.snake_segments[index + 1].teleport(x_cor - 20, y_cor)
+
+    def grow(self):
+        """Adds another segment to the end of the snake."""
+        new_segment = Turtle()
+        new_segment.shape("circle")
+        new_segment.color("yellowgreen")
+        new_segment.penup()
+        self.snake_segments.append(new_segment)
 
 
     def move(self):
