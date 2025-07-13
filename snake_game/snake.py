@@ -1,9 +1,15 @@
 from turtle import Turtle
 
+RIGHT = 0
+UP = 90
+LEFT = 180
+DOWN = 270
+
 class Snake():
     def __init__(self):
         self.snake_segments = []
         self.create_snake()
+        self.snake_head = self.snake_segments[0]
 
     def create_snake(self):
         """Creates a three segments long snake."""
@@ -30,14 +36,28 @@ class Snake():
 
             self.snake_segments[segment_num].goto(x_cor_new, y_cor_new)
 
-        self.snake_segments[0].forward(20)
+        self.snake_head.forward(20)
+
+
+    def turn_right(self):
+        """Turns the snake right"""
+        if self.snake_head.heading() != LEFT:
+            self.snake_head.setheading(RIGHT)
+
+
+    def turn_up(self):
+        """Turns the snake upwards."""
+        if self.snake_head.heading() != DOWN:
+            self.snake_head.setheading(UP)
 
 
     def turn_left(self):
-        """Turns the snake left."""
-        self.snake_segments[0].left(90)
+        """Turns the snake left"""
+        if self.snake_head.heading() != RIGHT:
+            self.snake_head.setheading(LEFT)
 
 
-    def turn_right(self):#
-        """Turns the snake right."""
-        self.snake_segments[0].right(90)
+    def turn_down(self):#
+        """Turns the snake downwards."""
+        if self.snake_head.heading() != UP:
+            self.snake_head.setheading(DOWN)
