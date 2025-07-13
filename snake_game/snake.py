@@ -35,16 +35,16 @@ class Snake():
         new_segment.shape("circle")
         new_segment.color("yellowgreen")
         new_segment.penup()
+        new_segment.goto(self.snake_segments[-1].position())
         self.snake_segments.append(new_segment)
 
 
     def move(self):
         """Moves the snake forwards."""
         for segment_num in range((len(self.snake_segments) - 1), 0, -1):
-            x_cor_new = self.snake_segments[segment_num - 1].xcor()
-            y_cor_new = self.snake_segments[segment_num - 1].ycor()
+            new_position = self.snake_segments[segment_num - 1].position()
 
-            self.snake_segments[segment_num].goto(x_cor_new, y_cor_new)
+            self.snake_segments[segment_num].goto(new_position)
 
         self.snake_head.forward(20)
 
