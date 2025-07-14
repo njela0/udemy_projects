@@ -6,7 +6,7 @@ COLORS_FOOD = [
 "cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray",
 "darkgrey", "darkgreen", "darkkhaki", "darkmagenta", "darkolivegreen",
 "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen",
-"darkslateblue", "darkslategray", "darkturquoise",
+"darkslateblue", "darkturquoise",
 "darkviolet", "deeppink", "deepskyblue","dimgray", "dimgrey",
 "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia",
 "gainsboro", "ghostwhite", "gold", "goldenrod", "gray", "grey",
