@@ -1,30 +1,25 @@
 from turtle import Turtle
 
 class Paddle(Turtle):
-    def __init__(self):
+    def __init__(self, x_cor, y_cor):
         super().__init__()
-        self.create_paddle()
-
-
-    def create_paddle(self):
         self.shape("square")
+        self.shapesize(stretch_wid=5, stretch_len=1)
         self.color("white")
         self.penup()
-        self.shapesize(stretch_wid=5, stretch_len=1)
-
-    def place_left_paddle(self, screen_width):
-        self.goto(-((screen_width / 2) - 50) , 0)
-
-    def place_right_paddle(self, screen_width):
-        self.goto(((screen_width / 2) - 50), 0)
+        self.x_cor = x_cor
+        self.y_cor = y_cor
+        self.goto(self.x_cor, self.y_cor)
 
     def upwards(self):
+        """Moves the paddle upwards."""
         new_ycor = self.ycor() + 20
         if -250 < new_ycor < 250:
             self.goto(self.xcor(), new_ycor)
 
 
     def downwards(self):
+        """Moves the paddle downwards."""
         new_ycor = self.ycor() - 20
         if -250 < new_ycor < 250:
             self.goto(self.xcor(), new_ycor)
