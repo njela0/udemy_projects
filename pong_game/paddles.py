@@ -10,10 +10,22 @@ class Paddle(Turtle):
         self.shape("square")
         self.color("white")
         self.penup()
-        self.shapesize(stretch_wid=4, stretch_len=1)
+        self.shapesize(stretch_wid=5, stretch_len=1)
 
     def place_left_paddle(self, screen_width):
         self.goto(-((screen_width / 2) - 50) , 0)
 
     def place_right_paddle(self, screen_width):
         self.goto(((screen_width / 2) - 50), 0)
+
+    def upwards(self):
+        new_ycor = self.ycor() + 20
+        if -250 < new_ycor < 250:
+            self.goto(self.xcor(), new_ycor)
+
+
+    def downwards(self):
+        new_ycor = self.ycor() - 20
+        if -250 < new_ycor < 250:
+            self.goto(self.xcor(), new_ycor)
+
