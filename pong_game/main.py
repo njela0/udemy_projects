@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddles import Paddle
 from pong_game.ball import Ball
+from scoreboard import Scoreboard
 import time
 
 
@@ -34,6 +35,14 @@ screen.onkeypress(paddle_right.downwards, "Down")
 ball = Ball()
 screen.update()
 
+# initialise the scoreboard
+score = Scoreboard()
+
+# draw the line
+line = Scoreboard()
+line.draw_line()
+screen.update()
+
 
 # start the game
 game_is_on = True
@@ -41,38 +50,35 @@ game_is_on = True
 x_direction = 10
 y_direction = 10
 
-score_left = 0
-score_right = 0
-
 while game_is_on:
-
+    score.update_scoreboard()
     screen.update()
     time.sleep(0.1)
 
     # detect collision with wall
     if ball.ycor() < -280 or ball.ycor() > 280:
-        ball.wall_bounce()
+        ball.x_bounce()
 
     # detect collision with paddle
     if  ball.distance(paddle_left) < 60 and ball.xcor() < -320:
-        ball.paddle_bounce()
+        ball.y_bounce()
 
     if ball.distance(paddle_right) < 60 and ball.xcor() > 320:
-        ball.paddle_bounce()
+        ball.y_bounce()
 
-    if ball.xcor() < -380:
-        score_right += 1
+
+    if ball.xcor() < -360:
+        score.score_right += 1
+        ball.y_bounce()
         ball.home()
         time.sleep(0.3)
 
-    if ball.xcor() > 380:
-        score_left += 1
+    if ball.xcor() > 360:
+        score.score_left += 1
+        ball.y_bounce()
         ball.home()
         time.sleep(0.3)
 
     ball.move()
-
-
-
 
 screen.exitonclick()

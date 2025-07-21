@@ -18,12 +18,12 @@ class Ball(Turtle):
         self.goto(new_xcor, new_ycor)
 
 
-    def wall_bounce(self):
+    def x_bounce(self):
         """Changes the y-direction of the ball."""
         self.y_direction *= - 1
 
 
-    def paddle_bounce(self):
+    def y_bounce(self):
         """Changes the x-direction of the ball."""
         self.x_direction *= -1
 

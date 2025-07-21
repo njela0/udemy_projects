@@ -9,7 +9,7 @@ class Paddle(Turtle):
         self.penup()
         self.x_cor = x_cor
         self.y_cor = y_cor
-        self.goto(self.x_cor, self.y_cor)
+
 
     def upwards(self):
         """Moves the paddle upwards."""
