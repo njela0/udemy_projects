@@ -41,6 +41,9 @@ game_is_on = True
 x_direction = 10
 y_direction = 10
 
+score_left = 0
+score_right = 0
+
 while game_is_on:
 
     screen.update()
@@ -56,6 +59,16 @@ while game_is_on:
 
     if ball.distance(paddle_right) < 60 and ball.xcor() > 320:
         ball.paddle_bounce()
+
+    if ball.xcor() < -380:
+        score_right += 1
+        ball.home()
+        time.sleep(0.3)
+
+    if ball.xcor() > 380:
+        score_left += 1
+        ball.home()
+        time.sleep(0.3)
 
     ball.move()
 
