@@ -53,31 +53,37 @@ y_direction = 10
 while game_is_on:
     score.update_scoreboard()
     screen.update()
-    time.sleep(0.1)
+    time.sleep(ball.ball_speed)
+
 
     # detect collision with wall
     if ball.ycor() < -280 or ball.ycor() > 280:
         ball.x_bounce()
 
+
     # detect collision with paddle
     if  ball.distance(paddle_left) < 60 and ball.xcor() < -320:
         ball.y_bounce()
+
 
     if ball.distance(paddle_right) < 60 and ball.xcor() > 320:
         ball.y_bounce()
 
 
+    # detect if ball is out of bounds
     if ball.xcor() < -360:
         score.score_right += 1
         ball.y_bounce()
-        ball.home()
+        ball.position_reset()
         time.sleep(0.3)
+
 
     if ball.xcor() > 360:
         score.score_left += 1
         ball.y_bounce()
-        ball.home()
+        ball.position_reset()
         time.sleep(0.3)
+
 
     ball.move()
 

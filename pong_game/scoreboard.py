@@ -16,11 +16,13 @@ class Scoreboard(Turtle):
 
 
     def update_scoreboard(self):
+        """Updates the shown scoreboard."""
         self.clear()
         self.write(f"{self.score_left} : {self.score_right}", align=ALIGNMENT, font=FONT)
 
 
     def draw_line(self):
+        """Draws a line in the middle of the screen."""
         self.pensize(3)
         for _ in range(50):
             self.penup()

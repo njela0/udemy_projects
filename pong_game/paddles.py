@@ -7,8 +7,7 @@ class Paddle(Turtle):
         self.shapesize(stretch_wid=5, stretch_len=1)
         self.color("white")
         self.penup()
-        self.x_cor = x_cor
-        self.y_cor = y_cor
+        self.goto(x_cor, y_cor)
 
 
     def upwards(self):
